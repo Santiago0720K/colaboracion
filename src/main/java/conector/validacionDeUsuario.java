@@ -48,7 +48,7 @@ HttpServletResponse response)
         request.setAttribute("usuario", user); 
          
         // Redirigir a JSP 
-        request.getRequestDispatcher("resultado.jsp").forward(request, 
+        request.getRequestDispatcher("Resultado.jsp").forward(request, 
 response); 
     } 
 } 
