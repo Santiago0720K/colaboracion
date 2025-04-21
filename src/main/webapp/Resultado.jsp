@@ -101,7 +101,7 @@
             <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
             <a href="buscaminas.html" class="btn btn-game">💣 Jugar Buscaminas</a>
             
-            <a href="https://www.google.com/logos/2010/pacman10-i.html" class="btn btn-game">Jugar Pacman</a>
+            <a href="https://www.google.com/logos/2010/pacman10-i.html" class="btn btn-game">👻 Jugar Pacman</a>
 
         <%
             } else if (valido != null && !valido) {
