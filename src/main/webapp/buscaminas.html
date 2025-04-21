@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscaminas</title>
+  <style>
+    body {
+      background: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    td {
+      width: 30px;
+      height: 30px;
+      background: #444;
+      border: 1px solid #666;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    td.open {
+      background: #ddd;
+      color: #000;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <h1>💣 Buscaminas</h1>
+  <table id="grid"></table>
+  <br>
+  <button onclick="window.location.href='index.html'">🔙 Volver al Menú</button>
+
+  <script>
+    const rows = 8, cols = 8, mines = 10;
+    let grid = [];
+
+    function createBoard() {
+      const table = document.getElementById("grid");
+      for (let y = 0; y < rows; y++) {
+        let row = [];
+        let tr = document.createElement("tr");
+        for (let x = 0; x < cols; x++) {
+          let cell = document.createElement("td");
+          cell.onclick = () => reveal(x, y);
+          tr.appendChild(cell);
+          row.push({ mine: false, revealed: false, element: cell });
+        }
+        table.appendChild(tr);
+        grid.push(row);
+      }
+      placeMines();
+    }
+
+    function placeMines() {
+      let placed = 0;
+      while (placed < mines) {
+        let x = Math.floor(Math.random() * cols);
+        let y = Math.floor(Math.random() * rows);
+        if (!grid[y][x].mine) {
+          grid[y][x].mine = true;
+          placed++;
+        }
+      }
+    }
+
+    function reveal(x, y) {
+      const cell = grid[y][x];
+      if (cell.revealed) return;
+      cell.revealed = true;
+      cell.element.classList.add("open");
+
+      if (cell.mine) {
+        cell.element.textContent = "💣";
+        alert("💥 Boom! Has perdido.");
+        location.reload();
+        return;
+      }
+
+      let minesAround = countMines(x, y);
+      if (minesAround > 0) {
+        cell.element.textContent = minesAround;
+      } else {
+        for (let i = -1; i <= 1; i++)
+          for (let j = -1; j <= 1; j++)
+            if (grid[y + j] && grid[y + j][x + i]) reveal(x + i, y + j);
+      }
+    }
+
+    function countMines(x, y) {
+      let count = 0;
+      for (let i = -1; i <= 1; i++)
+        for (let j = -1; j <= 1; j++)
+          if (grid[y + j] && grid[y + j][x + i] && grid[y + j][x + i].mine)
+            count++;
+      return count;
+    }
+
+    createBoard();
+  </script>
+</body>
+</html>
+

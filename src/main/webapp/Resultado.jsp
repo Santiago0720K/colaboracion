@@ -99,6 +99,8 @@
             <h1>¡Acceso concedido!</h1>
             <p>Bienvenido, ${usuario}. Has iniciado sesión correctamente.</p>
             <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
+            <a href="buscaminas.html" class="btn btn-game">💣 Jugar Buscaminas</a>
+            
         <%
             } else if (valido != null && !valido) {
         %>
