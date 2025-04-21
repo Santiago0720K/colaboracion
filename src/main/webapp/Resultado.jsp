@@ -98,7 +98,7 @@
             <div class="icon-success">✅</div>
             <h1>¡Acceso concedido!</h1>
             <p>Bienvenido, ${usuario}. Has iniciado sesión correctamente.</p>
-            <a href="snake.html" class="btn btn-game">🎮 Jugar Snake</a>
+            <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
         <%
             } else if (valido != null && !valido) {
         %>
