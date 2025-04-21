@@ -105,7 +105,7 @@
             <div class="icon-error">❌</div>
             <h1>Acceso denegado</h1>
             <p>Usuario o contraseña incorrectos.</p>
-            <a href="login.html" class="btn btn-return">🔙 Volver al login</a>
+            <a href="Login.jsp" class="btn btn-return">🔙 Volver al login</a>
         <%
             } else {
         %>
