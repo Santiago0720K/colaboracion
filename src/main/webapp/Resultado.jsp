@@ -99,6 +99,7 @@
             <h1>¡Acceso concedido!</h1>
             <p>Bienvenido, ${usuario}. Has iniciado sesión correctamente.</p>
             <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
+            <a href="https://www.google.com/logos/2010/pacman10-i.html" class="btn btn-game">Jugar Pacman</a>
         <%
             } else if (valido != null && !valido) {
         %>
