@@ -16,6 +16,13 @@ import java.io.IOException;
 @WebServlet(name = "ValidarUsuario", urlPatterns = {"/ValidarUsuario"}) 
 public class validacionDeUsuario extends HttpServlet { 
  
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override 
     protected void doPost(HttpServletRequest request, 
 HttpServletResponse response) 

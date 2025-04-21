@@ -89,9 +89,8 @@
         }
     </style>
     
-    <body>
-        <body> 
-    <div class="container">
+<body> 
+        <div class="container">
         <%
             Boolean valido = (Boolean)request.getAttribute("esValido");
             if (valido != null && valido) {
@@ -116,6 +115,5 @@
             }
         %>
     </div>
-</body> se ag
-    </body>
+</body>
 </html>
