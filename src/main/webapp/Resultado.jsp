@@ -1,9 +1,9 @@
+
 <%-- 
     Document   : Resultado
-    Created on : 21/04/2025, 10:21:30 a. m.
+    Created on : 21/04/2025, 10:21:30 a. m.
     Author     : SENA
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,6 @@
             height: 100vh;
             color: #333;
         }
-
         .container {
             background-color: #fff;
             padding: 50px 30px;
@@ -34,31 +33,25 @@
             width: 100%;
             max-width: 420px;
         }
-
         .icon-success, .icon-error {
             font-size: 60px;
             margin-bottom: 20px;
         }
-
         .icon-success {
             color: #38a169;
         }
-
         .icon-error {
             color: #e53e3e;
         }
-
         h1 {
             font-size: 24px;
             color: #2d3748;
             margin-bottom: 10px;
         }
-
         p {
             font-size: 16px;
             margin-bottom: 30px;
         }
-
         .btn {
             display: inline-block;
             margin: 10px 5px;
@@ -71,23 +64,34 @@
             transition: background 0.3s ease;
             color: white;
         }
-
         .btn-return {
             background-color: #3182ce;
         }
-
         .btn-return:hover {
             background-color: #2b6cb0;
         }
-
         .btn-game {
             background-color: #38a169;
         }
-
         .btn-game:hover {
             background-color: #2f855a;
         }
-    </style>
+        .btn-sesion{
+            background-color:#004080;
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+        .btn-sesion:hover{
+            background-color:#007bff 
+        }
+        .games-container {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+</style>
     
 <body> 
         <div class="container">
@@ -98,11 +102,15 @@
             <div class="icon-success">✅</div>
             <h1>¡Acceso concedido!</h1>
             <p>Bienvenido, ${usuario}. Has iniciado sesión correctamente.</p>
-            <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
-            <a href="buscaminas.html" class="btn btn-game">💣 Jugar Buscaminas</a>
             
-            <a href="https://www.google.com/logos/2010/pacman10-i.html" class="btn btn-game">👻 Jugar Pacman</a>
-
+            <a href="sesiones.jsp" class="btn btn-sesion">Conteo de sesiones</a>
+            <h1>JUEGOS</h1>
+            
+            <div class="games-container">
+                <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
+                <a href="buscaminas.html" class="btn btn-game">💣 Jugar Buscaminas</a>
+                <a href="https://www.google.com/logos/2010/pacman10-i.html" class="btn btn-game">👻 Jugar Pacman</a>
+            </div>
         <%
             } else if (valido != null && !valido) {
         %>
