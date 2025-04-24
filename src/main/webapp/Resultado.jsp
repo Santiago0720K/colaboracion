@@ -85,6 +85,16 @@
         .btn-sesion:hover{
             background-color:#007bff 
         }
+        .btn-Login{
+            background-color:#004080;
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+        .btn-Login:hover{
+            background-color:#007bff 
+        }
+        
         .games-container {
             margin-top: 15px;
             display: flex;
@@ -104,12 +114,14 @@
             <p>Bienvenido, ${usuario}. Has iniciado sesión correctamente.</p>
             
             <a href="sesiones.jsp" class="btn btn-sesion">Conteo de sesiones</a>
-            <h1>JUEGOS</h1>
+            <a href="Login.jsp" class="btn btn-Login">Cerrar sesion❌</a>
+            <h1>JUEGOS🎮 </h1>
             
             <div class="games-container">
                 <a href="culebrita.html" class="btn btn-game">🎮 Jugar Snake</a>
                 <a href="buscaminas.html" class="btn btn-game">💣 Jugar Buscaminas</a>
                 <a href="https://www.google.com/logos/2010/pacman10-i.html" class="btn btn-game">👻 Jugar Pacman</a>
+                 <a href="https://www.frivclassic.com/" class="btn btn-game">Juegos friv</a>
             </div>
         <%
             } else if (valido != null && !valido) {
